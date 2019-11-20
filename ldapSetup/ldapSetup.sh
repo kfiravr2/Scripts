@@ -51,7 +51,7 @@ rm ouGroups.ldif;
 
 LDAP_USERS_NUM=0;
 while [ "$LDAP_USERS_NUM" -lt 3 ] || [ -z $LDAP_USERS_NUM ]; do
-  read -p "How many Users (minimum 3)? : " LDAP_USERS_NUM
+  read -p "How many Users (minimum 4)? : " LDAP_USERS_NUM
 done
 echo " "
 read -p "How many Groups? : " LDAP_GROUPS_NUM
