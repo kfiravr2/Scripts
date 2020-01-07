@@ -72,8 +72,8 @@ uid: user$i
 userPassword:: cGFzc3dvcmQ=
 EOF
 ldapadd -x -h "127.0.0.1" -p 389 -D "cn=admin,dc=openstack,dc=org" -w "password" -f member$i.ldif
-done
 rm member*
+done
 fi
 
 
@@ -85,13 +85,13 @@ dn: cn=group$i,ou=Groups,ou=Organization,dc=openstack,dc=org
 objectClass: groupOfNames
 objectClass: top
 cn: group$i
-member: uid=user1,ou=Users,ou=Organization,dc=openstack,dc=org
-member: uid=user2,ou=Users,ou=Organization,dc=openstack,dc=org
-member: uid=user3,ou=Users,ou=Organization,dc=openstack,dc=org
+member: cn=User1,ou=Users,ou=Organization,dc=openstack,dc=org
+member: cn=User2,ou=Users,ou=Organization,dc=openstack,dc=org
+member: cn=User3,ou=Users,ou=Organization,dc=openstack,dc=org
 EOF
 ldapadd -x -h "127.0.0.1" -p 389 -D "cn=admin,dc=openstack,dc=org" -w "password" -f group$i.ldif
-done
 rm group*
+done
 fi
 
 echo "***** DONE LDAP Server is ready *****"
